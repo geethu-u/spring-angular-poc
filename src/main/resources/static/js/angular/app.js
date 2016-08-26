@@ -5,12 +5,10 @@ angular.module('CLEApp', ['AngularChart']).config(
         .when('/trends', {
           templateUrl: '../views/trends.html',
           controller: 'TrendsCtrl'
-
         })
         .when('/search', {
-          templateUrl: '../views/searchlogs.html',
+          templateUrl: '../views/search.html',
           controller: 'SearchCtrl'
-
         })
         .otherwise({
           redirectTo: '/search'
