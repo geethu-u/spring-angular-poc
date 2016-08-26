@@ -1,0 +1,111 @@
+#searchContainer {
+  padding: 100px;
+  overflow: scroll;
+}
+
+.contact-text {
+  margin: 45px auto;
+}
+
+.header {
+  background-color: gainsboro;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.submitSection {
+  padding-bottom: 75px;
+}
+
+@media(min-width:768px) {
+  .fetchbtn {
+    padding-left: 50px;
+  }
+}
+
+
+/* Input Styles */
+
+.form {
+  width: 80%;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  margin-bottom: 15px;
+  color: #727272 !important;
+  font-size: 13px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.formdate {
+  height: 40px;
+}
+
+.form:hover {
+  border: 1px solid #8BC3A3;
+}
+
+.form:focus {
+  color: white;
+  outline: none;
+  border: 1px solid #8BC3A3;
+}
+
+
+/* Generic Button Styles */
+
+.button {
+  padding: 8px 12px;
+  background: #0A5175;
+  display: block;
+  width: 120px;
+  margin: 10px 0 0px 0;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 0.8em;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+.button:hover {
+  background: #8BC3A3;
+  color: white;
+}
+
+
+/* Send Button Styles */
+
+.form-btn {
+  width: 100px;
+  display: block;
+  height: auto;
+  padding: 10px;
+  color: #fff;
+  background: #8BC3A3;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: auto;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+.form-btn:hover {
+  background: #111;
+  color: white;
+  border: none;
+}
+
+.form-btn:active {
+  opacity: 0.9;
+}

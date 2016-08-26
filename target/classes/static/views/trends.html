@@ -1,0 +1,33 @@
+<div class="contact-form" >
+    <form id="search-form" method="post" action="#" class="form-inline">
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Start Date</label>
+            <div class="col-sm-10">
+                <input type="date" name="component" id="component" required="required" class="form formdate" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">End Date</label>
+            <div class="col-sm-10">
+                <input type="date" name="component" id="component" required="required" class="form formdate" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <label class="radio-inline">
+                    <input type="radio" value="">Exceptions</label>
+                <label class="radio-inline">
+                    <input type="radio" value="">Logs</label>
+            </div>
+        </div>
+
+        <div class="form-group fetchbtn">
+            <button type="button" id="submit" name="submit" ng-click="getTrendsData()" class="form-btn semibold">Fetch</button>
+        </div>
+    </form>
+</div>
+<div ng-show="showChart">
+<chart title="Monthly Sales" xData="lineChartXData" yData="lineChartYData" xName="Month" yName="Sales amount" subtitle="Monthly sales for 2016">
+</chart>
+<div>
