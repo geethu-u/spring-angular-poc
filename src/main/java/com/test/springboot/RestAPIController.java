@@ -1,4 +1,5 @@
 
+
 package com.test.springboot;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -6,12 +7,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.test.springboot.Sales;
 import com.test.springboot.SalesTrend;
 import java.util.*;
+import com.google.gson.JsonArray;
+//import net.sf.json.JSONException;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import java.io.IOException;
+import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.json.JSONObject;
+import org.json.JSONException;
+
+
 
 @RestController
 public class RestAPIController {
+
 
     @RequestMapping("/dashboard")
     public String index() {
@@ -80,5 +97,65 @@ public class RestAPIController {
        }
        return(jsonToString);        
    }
+
+
+@RequestMapping(
+                method = RequestMethod.GET,
+                produces = MediaType.APPLICATION_JSON_VALUE,
+                value = "/logsearch")
+     public Object logsearch(@RequestParam(value="query", defaultValue="*:*") String queryString) 
+         {    
+         Gson gson = new Gson();
+
+          String output = "Error in getting data from solr";
+          StringBuilder sb = new StringBuilder();
+          String modifiedQueryString = queryString.replace(",","%20AND%20");
+         
+          String finalQueryString = modifiedQueryString.replace(" ","%20");
+
+    try {
+
+               String solrSearchUrl = "http://localhost:8983/solr/clelogs2/query?q="+finalQueryString+"&wt=json&indent=true";
+    URL url = new URL(solrSearchUrl);
+                //URL url = new URL("http://localhost:8983/solr/clelogs2/query?q=*:*&wt=json&indent=true");
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestMethod("GET");
+    conn.setRequestProperty("Accept", "application/json");
+
+    if (conn.getResponseCode() != 200) {
+      throw new RuntimeException("Failed : HTTP error code : "
+          + conn.getResponseCode());
+    }
+
+    BufferedReader br = new BufferedReader(new InputStreamReader(
+      (conn.getInputStream())));
+
+    
+    System.out.println("Output from Server .... \n");
+    while ((output = br.readLine()) != null) {
+      sb.append(output + '\n');
+    }
+                br.close();
+
+    conn.disconnect();
+                System.out.println("solrSearchUrl = " + solrSearchUrl);
+
+    } catch (MalformedURLException e) {
+
+    e.printStackTrace();
+
+    } catch (IOException e) {
+
+    e.printStackTrace();
+
+    }
+
+     
+        JSONObject jsonObject = new JSONObject(sb.toString());
+        System.out.println("queryString = " + finalQueryString );
+       
+
+        return(sb.toString());
+    }
 
 }

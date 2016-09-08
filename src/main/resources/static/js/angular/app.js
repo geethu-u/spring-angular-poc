@@ -1,4 +1,4 @@
-angular.module('CLEApp', ['AngularChart']).config(
+angular.module('CLEApp', ['AngularChart','ui.bootstrap','ngRoute','ngResource']).config(
   ['$routeProvider',
     function($routeProvider) {
       $routeProvider
