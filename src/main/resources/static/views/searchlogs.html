@@ -10,14 +10,15 @@
                                         <!-- Left Inputs -->
                                         <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="email">Application</label>
+                                                <label class="control-label col-sm-2">Application</label>
                                                 <div class="col-sm-10">
-                                                    <select name="appName" id="appName" required="required" class="form">
+                                                    <select name="appName" id="appName" required="required" class="form"
+                                                     ng-model="searchform.appId">
                                                         <option>
                                                             Select Application
                                                         </option>
                                                         <option>
-                                                            APP1
+                                                            1402
                                                         </option>
                                                         <option>
                                                             APP2
@@ -26,57 +27,57 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Component</label>
+                                                <label class="control-label col-sm-2" >Component</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="component" name="component" id="component" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Service</label>
+                                                <label class="control-label col-sm-2">Service</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="service"  required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Transaction ID</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="transactionId" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Status</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text"  ng-model="stat" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Domain</label>
+                                                <label class="control-label col-sm-2" >Domain</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="domain" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Transaction Type</label>
+                                                <label class="control-label col-sm-2" >Transaction Type</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="transactiontype" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Log category</label>
+                                                <label class="control-label col-sm-2" >Log category</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="logcetgory" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Business Id</label>
+                                                <label class="control-label col-sm-2" >Business Id</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text"  ng-model="searchform.businessId" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Host Name</label>
+                                                <label class="control-label col-sm-2" >Host Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="hostname"  required="required" class="form" />
                                                 </div>
                                             </div>
 
@@ -88,54 +89,54 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Business Id2</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="businessId2" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Name</label>
+                                                <label class="control-label col-sm-2">Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" ng-model="name"  required="required" class="form" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2">Value</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" ng-model="value" required="required" class="form" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" >Start Time</label>
+                                                <div class="col-sm-10">
+                                                    <input type="date" ng-model="starttime"  required="required" class="form formdate" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" >End Time</label>
+                                                <div class="col-sm-10">
+                                                    <input type="date" ng-model="endtime"  required="required" class="form formdate" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" >Before data</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" name="component" id="component" required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Value</label>
+                                                <label class="control-label col-sm-2" >After data</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text"  required="required" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Start Time</label>
-                                                <div class="col-sm-10">
-                                                    <input type="date" name="component" id="component" required="required" class="form formdate" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">End Time</label>
-                                                <div class="col-sm-10">
-                                                    <input type="date" name="component" id="component" required="required" class="form formdate" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Before data</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">After data</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Max rows(
+                                                <label class="control-label col-sm-2" >Max rows(
                                                     <3000)</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" name="component" id="component" required="required" class="form" />
+                                                            <input type="text" required="required" class="form" />
                                                         </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Log status</label>
+                                                <label class="control-label col-sm-2" >Log status</label>
                                                 <div class="col-sm-10">
                                                     <label class="checkbox-inline">
                                                         <input type="checkbox" value="">Filtered</label>
@@ -144,7 +145,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Search type</label>
+                                                <label class="control-label col-sm-2" >Search type</label>
                                                 <div class="col-sm-10">
                                                     <label class="radio-inline">
                                                         <input type="radio" value="">Restricted</label>

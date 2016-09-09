@@ -10,29 +10,7 @@
     
       $rootScope.pagetitle = "Search";
       $scope.page = "landing";
-      
-      $scope.logresults = [
-        {"select" : true, "appid": "APP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : false, "appid": "APP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"},
-        {"select" : true, "appid": "APP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"},
-        {"select" : false, "appid": "HAPP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"},
-        {"select" : false, "appid": "APP_4_5_6_7_8", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : true, "appid": "CAPP_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : false, "appid": "DAPP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : false, "appid": "APP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : false, "appid": "SAPP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}, 
-        {"select" : false, "appid": "APP_1_2_3_4_5", "component": "APP_1_2_3_COMPONENT","service":"GET_REWARDS_12345","status":"Received","hostname":"1265567_89244",
-        "businessid": "00000232342","businessid2": "0000343434","transactionId" : "TRANS_ensdsdf_werwerwr"}
-      ];
+      $scope.searchform = {};
 
       var success = function(result) {
       $rootScope.pagetitle = "Search Results";
@@ -41,7 +19,10 @@
       };
 
       $scope.getResults = function(){
-        SearchService.getSearchResults(success, null);
+        var payload  = {};
+        var searchdata = $scope.searchform;
+        payload.BUSINESSID = searchdata.businessId;
+        SearchService.getSearchResults(payload, success, null);
       };
       
   //     $scope.totalItems = $scope.logresults.length;

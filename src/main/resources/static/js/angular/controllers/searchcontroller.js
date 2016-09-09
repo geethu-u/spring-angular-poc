@@ -10,7 +10,8 @@
     
       $rootScope.pagetitle = "Search";
       $scope.page = "landing";
-      
+      $scope.searchform = {};
+
       var success = function(result) {
       $rootScope.pagetitle = "Search Results";
       $scope.page = "results";
@@ -18,7 +19,10 @@
       };
 
       $scope.getResults = function(){
-        SearchService.getSearchResults(success, null);
+        var payload  = {};
+        var searchdata = $scope.searchform;
+        payload.BUSINESSID = searchdata.businessId;
+        SearchService.getSearchResults(payload, success, null);
       };
       
   //     $scope.totalItems = $scope.logresults.length;
