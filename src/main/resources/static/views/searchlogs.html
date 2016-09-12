@@ -12,7 +12,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2">Application</label>
                                                 <div class="col-sm-10">
-                                                    <select name="appName" id="appName" required="required" class="form"
+                                                    <select name="appName" id="appName" class="form"
                                                      ng-model="searchform.appId">
                                                         <option>
                                                             Select Application
@@ -29,55 +29,55 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Component</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="component" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.component" name="component" id="component" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2">Service</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="service"  required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.service"  class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Transaction ID</label>
+                                                <label class="control-label col-sm-2" >Transaction ID</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="transactionId" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.transactionId" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Status</label>
+                                                <label class="control-label col-sm-2" >Status</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text"  ng-model="stat" required="required" class="form" />
+                                                    <input type="text"  ng-model="searchform.stat" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Domain</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="domain" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.domain" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Transaction Type</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="transactiontype" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.transactiontype" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Log category</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="logcetgory" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.logcetgory" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Business Id</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text"  ng-model="searchform.businessId" required="required" class="form" />
+                                                    <input type="text"  ng-model="searchform.businessId" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Host Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="hostname"  required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.hostname"   class="form" />
                                                 </div>
                                             </div>
 
@@ -87,60 +87,60 @@
                                         <div class="col-xs-6 wow animated slideInRight" data-wow-delay=".5s">
                                             <!-- Message -->
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="pwd">Business Id2</label>
+                                                <label class="control-label col-sm-2" for="pwd">Log Id</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="businessId2" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.logId" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2">Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="name"  required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.name" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2">Value</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" ng-model="value" required="required" class="form" />
+                                                    <input type="text" ng-model="searchform.value" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Start Time</label>
                                                 <div class="col-sm-10">
-                                                    <input type="date" ng-model="starttime"  required="required" class="form formdate" />
+                                                    <input type="date" ng-model="searchform.starttime"  class="form formdate" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >End Time</label>
                                                 <div class="col-sm-10">
-                                                    <input type="date" ng-model="endtime"  required="required" class="form formdate" />
+                                                    <input type="date" ng-model="searchform.endtime" class="form formdate" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Before data</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" name="component" id="component" required="required" class="form" />
+                                                    <input type="text" name="component" id="component" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >After data</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text"  required="required" class="form" />
+                                                    <input type="text" class="form" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Max rows(
                                                     <3000)</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" required="required" class="form" />
+                                                            <input type="text" class="form" />
                                                         </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >Log status</label>
                                                 <div class="col-sm-10">
                                                     <label class="checkbox-inline">
-                                                        <input type="checkbox" value="">Filtered</label>
-                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="" ng-model ="searchdata.filtered">Filtered</label>
+                                                    <label class="checkbox-inline" ng-model ="searchdata.new">
                                                         <input type="checkbox" value="">New</label>
                                                 </div>
                                             </div>
@@ -148,9 +148,9 @@
                                                 <label class="control-label col-sm-2" >Search type</label>
                                                 <div class="col-sm-10">
                                                     <label class="radio-inline">
-                                                        <input type="radio" value="">Restricted</label>
+                                                        <input type="radio" value="" ng-model ="searchdata.restricted">Restricted</label>
                                                     <label class="radio-inline">
-                                                        <input type="radio" value="">Unrestricted</label>
+                                                        <input type="radio" value="" ng-model ="searchdata.unrestricted">Unrestricted</label>
                                                 </div>
                                             </div>
                                         </div>

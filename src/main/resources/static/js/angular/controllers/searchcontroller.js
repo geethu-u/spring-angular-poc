@@ -4,9 +4,9 @@
     .module("CLEApp")
     .controller("SearchCtrl", SearchCtrl);
 
-  SearchCtrl.$inject = ["$scope", "$http","$rootScope","$location" ,"SearchService"];
+  SearchCtrl.$inject = ["$scope", "$http","$rootScope","$location" ,"$anchorScroll", "SearchService"];
 
-  function SearchCtrl($scope, $http, $rootScope, $location, SearchService) {
+  function SearchCtrl($scope, $http, $rootScope, $location, $anchorScroll, SearchService) {
     
       $rootScope.pagetitle = "Search";
       $scope.page = "landing";
@@ -20,10 +20,32 @@
 
       $scope.getResults = function(){
         var payload  = {};
+        
         var searchdata = $scope.searchform;
+
         payload.BUSINESSID = searchdata.businessId;
+        payload.TRANSACTIONID = searchdata.transactionId;
+        payload.STATUS = searchdata.stat;
+        payload.APPLICATIONID = searchdata.appId;
+        payload.SERVICENAME = searchdata.service;
+        payload.HOSTNAME = searchdata.hostname;
+        payload.APPLICATIONDOMAIN = searchdata.domain;
+        payload.TRANSACTIONTYPE = searchdata.transactiontype;
+        payload.LOGCATEGORY = searchdata.logcategory;
+        payload.LOGID = searchdata.logId;
+
         SearchService.getSearchResults(payload, success, null);
       };
+      $scope.goBack = function(){
+        $scope.goUp();
+        $rootScope.pagetitle = "Search";
+        $scope.page = "landing";
+      };
+
+      $scope.goUp = function(){
+        $location.hash('pageHeader');
+        $anchorScroll();
+      }
       
   //     $scope.totalItems = $scope.logresults.length;
   //     $scope.currentPage = 1;

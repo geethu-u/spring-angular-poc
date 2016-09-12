@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped display " paginated-table id="logsearchresults">
+            <table class="table table-bordered table-hover table-striped display " id="logsearchresults">
                 <thead>
                     <tr>
                         <th>Select</th>
@@ -11,7 +11,7 @@
                         <th>Status</th>
                         <th>Host Name</th>
                         <th>Business Id</th>
-                        <th>Business Id2</th>
+                        <th>Log Id</th>
                         <th>Transaction Id</th>
                     </tr>
                 </thead>
@@ -24,7 +24,7 @@
                             <td>{{logresult.STATUS}}</td>
                             <td>{{logresult.HOSTNAME}}</td>
                             <td>{{logresult.BUSINESSID}}</td>
-                            <td>{{logresult.BUSINESSID}}</td>
+                            <td>{{logresult.LOGID}}</td>
                             <td>{{logresult.TRANSACTIONID}}</td>
                     </tr>
                 </tbody>
@@ -33,6 +33,10 @@
           max-size="5" boundary-links="true"
           items-per-page="numPerPage" class="pagination-sm">
         </pagination> -->
-        </div>
+            <div class="relative fullwidth col-xs-12 submitSection">
+                <!-- Search Button -->
+                <button type="button" id="submit" name="submit" ng-click="goBack()" class="form-btn semibold">Back to Search</button>
+            </div>
+            </div>
     </div>
 </div>
