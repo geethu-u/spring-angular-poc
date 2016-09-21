@@ -60,6 +60,8 @@ angular.module('AngularChart', []).directive('chart', function () {
                     x:-10,
                     y:100,
                     borderWidth:0
+                }, credits: {
+                    enabled: false
                 },
                 series:[
                     {

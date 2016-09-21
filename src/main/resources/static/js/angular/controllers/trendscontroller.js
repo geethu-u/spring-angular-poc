@@ -30,7 +30,7 @@
       var data = {
         "xData": months,
         "yData": [{
-          "name": "Monthly sales",
+          "name": "Monthly Exception trends",
           "data": amounts
         }]
       }

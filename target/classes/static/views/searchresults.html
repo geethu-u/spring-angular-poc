@@ -1,7 +1,10 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped display " id="logsearchresults">
+            <div class = "backtosearch">
+                <button type="button" id="submit" name="submit" ng-click="goBack()" class="form-btn semibold">Back to Search</button>
+            </div>
+            <table class="table table-bordered table-hover table-striped display wrappedtable " id="logsearchresults">
                 <thead>
                     <tr>
                         <th>Select</th>
@@ -18,14 +21,14 @@
                 <tbody>
                     <tr ng-repeat="logresult in logresults | filter : paginate" ng-class="{'danger': logresult.select}">
                             <td><input type="checkbox" value={{logresult.select}}></td>
-                            <td><a href="#">{{logresult.APPLICATIONID}}</a></td>
-                            <td>{{logresult.COMPONENTNAME}}</td>
-                            <td>{{logresult.SERVICENAME}}</td>
-                            <td>{{logresult.STATUS}}</td>
-                            <td>{{logresult.HOSTNAME}}</td>
-                            <td>{{logresult.BUSINESSID}}</td>
-                            <td>{{logresult.LOGID}}</td>
-                            <td>{{logresult.TRANSACTIONID}}</td>
+                            <td><a href="#">{{logresult.APPLICATIONID | cleanField}}</a></td>
+                            <td>{{logresult.COMPONENTNAME| cleanField}}</td>
+                            <td>{{logresult.SERVICENAME| cleanField}}</td>
+                            <td>{{logresult.STATUS| cleanField}}</td>
+                            <td>{{logresult.HOSTNAME| cleanField}}</td>
+                            <td>{{logresult.BUSINESSID| cleanField}}</td>
+                            <td>{{logresult.LOGID| cleanField}}</td>
+                            <td>{{logresult.TRANSACTIONID| cleanField}}</td>
                     </tr>
                 </tbody>
             </table>

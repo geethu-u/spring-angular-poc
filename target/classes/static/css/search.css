@@ -6,7 +6,9 @@
 .contact-text {
   margin: 45px auto;
 }
-
+.chartcontainer {
+  margin: auto;
+}
 .header {
   background-color: gainsboro;
   padding-bottom: 25px;
@@ -15,6 +17,10 @@
 
 .submitSection {
   padding-bottom: 75px;
+}
+.wrappedtable{
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 
 @media(min-width:768px) {
@@ -77,17 +83,18 @@
   background: #8BC3A3;
   color: white;
 }
-
-
+.backtosearch{
+  float: right;
+  margin: 10px;
+}
 /* Send Button Styles */
 
 .form-btn {
-  width: 100px;
   display: block;
   height: auto;
   padding: 10px;
   color: #fff;
-  background: #8BC3A3;
+  background: #337ab7;
   border: none;
   border-radius: 3px;
   outline: none;

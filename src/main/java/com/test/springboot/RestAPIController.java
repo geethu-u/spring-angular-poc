@@ -78,7 +78,28 @@ public class RestAPIController {
        {
            Sales sales = new Sales();
            sales.setMonth(months[index]);
-           sales.setAmount(100 + index*100 + index*0.01);
+           double amount = 0;
+           switch(index){
+            case 1 : amount = 100 + index*100 + index*0.01;
+            break;
+            case 2 : amount = 500 + index*100 + index*0.01;
+            break;            
+            case 3 : amount = 200 + index*300 + index*0.01;
+            break;            
+            case 4 : amount = 100 + index*400 + index*0.01;
+            break;            
+            case 5 : amount = 100 + index*200 + index*0.01;
+            break; 
+            case 6 : amount = 100 + index*200 + index*0.01;
+            break; 
+            case 7 : amount = 100 + index*100 + index*0.01;
+            break; 
+            case 12 : amount = 100 + index*200 + index*0.01;
+            break; 
+            default : amount = 100 + index*200 + index*0.01;
+            break;                             
+           }
+           sales.setAmount(amount);
            salesTrendList.add(sales);
        }      
        // salesTrendList.add(sales1);
@@ -115,7 +136,7 @@ public class RestAPIController {
 
     try {
 
-               String solrSearchUrl = "http://localhost:8983/solr/clelogs2/query?q="+finalQueryString+"&wt=json&indent=true";
+               String solrSearchUrl = "http://localhost:8983/solr/clelogs2/query?q="+finalQueryString+"&wt=json&indent=true&rows=500";
     URL url = new URL(solrSearchUrl);
                 //URL url = new URL("http://localhost:8983/solr/clelogs2/query?q=*:*&wt=json&indent=true");
     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
