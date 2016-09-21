@@ -4,19 +4,27 @@
     .module("CLEApp")
     .controller("SearchCtrl", SearchCtrl);
 
-  SearchCtrl.$inject = ["$scope", "$http","$rootScope","$location" ,"$anchorScroll", "SearchService"];
+  SearchCtrl.$inject = ["$scope", "$http","$rootScope","$location" ,"$anchorScroll", "$timeout" ,"SearchService" ];
 
-  function SearchCtrl($scope, $http, $rootScope, $location, $anchorScroll, SearchService) {
+  function SearchCtrl($scope, $http, $rootScope, $location, $timeout, $anchorScroll, SearchService) {
     
       $rootScope.pagetitle = "Search";
       $scope.page = "landing";
       $scope.searchform = {};
       $scope.logdetail = {};
+      $scope.noresults =false;
 
       var success = function(result) {
+      $scope.noresults =false;
       $rootScope.pagetitle = "Search Results";
       $scope.page = "results";
       $scope.logresults = result.response.docs;
+      $scope.goUp();
+      };
+
+      var fail = function(result) {
+      $scope.noresults =true;
+      $scope.goUp();
       };
 
       $scope.getResults = function(){
@@ -35,7 +43,7 @@
         payload.LOGCATEGORY = searchdata.logcategory;
         payload.LOGID = searchdata.logId;
 
-        SearchService.getSearchResults(payload, success, null);
+        SearchService.getSearchResults(payload, success, fail);
       };
       $scope.goBack = function(){
         $scope.goUp();
@@ -44,14 +52,18 @@
       };
 
       $scope.goUp = function(){
-        $location.hash('pageHeader');
-        $anchorScroll();
+        $timeout(function() {
+          $location.hash('page-wrapper');
+          $anchorScroll();
+        });
       }
+
       $scope.showDetails = function(log){
         $rootScope.pagetitle = "Log details";
         $scope.page = "details";
         $scope.logdetail = log ;
       }
+
       $scope.showResults = function(){
         $rootScope.pagetitle = "Search Results";
         $scope.page = "results";
