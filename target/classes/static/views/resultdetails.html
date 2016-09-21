@@ -1,0 +1,102 @@
+               <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- /.container -->
+                            <div class="inner searchContainer">
+                                <!-- Form Area -->
+                                <div class="contact-form">
+                                    <!-- Form -->
+                                    <form id="search-form" method="post" action="#" class="form-horizontal">
+                                        <!-- Left Inputs -->
+                                        <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Application</label>
+                                                <div class="col-sm-9 wordwrap" >
+                                                    {{logdetail.APPLICATIONID | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Component</label>
+                                                <div class="col-sm-9 wordwrap" >
+                                                    {{logdetail.COMPONENTNAME | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3">Service</label>
+                                                <div class="col-sm-9">
+                                                    {{logdetail.SERVICENAME | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Transaction ID</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.TRANSACTIONID | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Status</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.STATUS | cleanField}}
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <!-- Right Inputs -->
+                                        <div class="col-xs-6 wow animated slideInRight" data-wow-delay=".5s">
+                                            <!-- Message -->
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Domain</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.TRANSACTIONDOMAIN | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Log Id</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.LOGID | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Logged time</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.TIMEMARK | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Filtered</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.FILTERED | cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-3" >Host Name</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.HOSTNAME| cleanField}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-sm-2" >Transaction after</label>
+                                                <div class="col-sm-9 wordwrap">
+                                                    {{logdetail.TRANSACTIONAFTER | cleanField}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Right Inputs -->
+                                        <!-- Bottom Submit -->
+                                        <div class="relative fullwidth col-xs-12 submitSection">
+                                            <!-- Search Button -->
+                                            <button type="button" id="submit" name="submit" ng-click="showResults()" class="form-btn semibold">Back to Search Results</button>
+                                        </div>
+                                        <!-- End Bottom Submit -->
+                                        <!-- Clear -->
+                                        <div class="clear"></div>
+                                    </form>
+
+                                </div>
+                                <!-- End Form Area -->
+                            </div>
+                        </div>
+                    </div>
+                </div>

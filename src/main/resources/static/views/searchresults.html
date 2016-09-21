@@ -8,26 +8,26 @@
                 <thead>
                     <tr>
                         <th>Select</th>
+                        <th>Log Id</th>
                         <th>Application</th>
                         <th>Component Name</th>
                         <th>Service Name</th>
                         <th>Status</th>
                         <th>Host Name</th>
                         <th>Business Id</th>
-                        <th>Log Id</th>
                         <th>Transaction Id</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="logresult in logresults | filter : paginate" ng-class="{'danger': logresult.select}">
                             <td><input type="checkbox" value={{logresult.select}}></td>
-                            <td><a href="#">{{logresult.APPLICATIONID | cleanField}}</a></td>
+                            <td><a href="" ng-click="showDetails(logresult)">{{logresult.LOGID| cleanField}}</a></td>
+                            <td>{{logresult.APPLICATIONID | cleanField}}</td>
                             <td>{{logresult.COMPONENTNAME| cleanField}}</td>
                             <td>{{logresult.SERVICENAME| cleanField}}</td>
                             <td>{{logresult.STATUS| cleanField}}</td>
                             <td>{{logresult.HOSTNAME| cleanField}}</td>
                             <td>{{logresult.BUSINESSID| cleanField}}</td>
-                            <td>{{logresult.LOGID| cleanField}}</td>
                             <td>{{logresult.TRANSACTIONID| cleanField}}</td>
                     </tr>
                 </tbody>

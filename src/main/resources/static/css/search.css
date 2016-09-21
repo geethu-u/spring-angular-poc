@@ -7,12 +7,16 @@
   margin: 45px auto;
 }
 .chartcontainer {
-  margin: auto;
+  width:80%;
+  height:80%;
 }
 .header {
   background-color: gainsboro;
   padding-bottom: 25px;
   padding-top: 25px;
+}
+.wordwrap{
+  word-wrap: break-word;
 }
 
 .submitSection {

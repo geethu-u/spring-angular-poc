@@ -11,6 +11,7 @@
       $rootScope.pagetitle = "Search";
       $scope.page = "landing";
       $scope.searchform = {};
+      $scope.logdetail = {};
 
       var success = function(result) {
       $rootScope.pagetitle = "Search Results";
@@ -45,6 +46,15 @@
       $scope.goUp = function(){
         $location.hash('pageHeader');
         $anchorScroll();
+      }
+      $scope.showDetails = function(log){
+        $rootScope.pagetitle = "Log details";
+        $scope.page = "details";
+        $scope.logdetail = log ;
+      }
+      $scope.showResults = function(){
+        $rootScope.pagetitle = "Search Results";
+        $scope.page = "results";
       }
       
   //     $scope.totalItems = $scope.logresults.length;
